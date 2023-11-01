@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SpeedyFulfillment</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/Font%20Awesome%205%20Brands.css">
+    <link rel="stylesheet" href="../assets/css/Font%20Awesome%205%20Free.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+Syriac+Eastern&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Flex&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Serif&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab&amp;display=swap">
+    <link rel="stylesheet" href="../assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/css/home/Bold-BS4-Footer-Simple.css">
+    <link rel="stylesheet" href="../assets/css/css/home/Customizable-Background--Overlay.css">
+    <link rel="stylesheet" href="../assets/css/css/home/Features-Image-images.css">
+    <link rel="stylesheet" href="../assets/css/css/home/Navbar-Right-Links-icons.css">
+    <link rel="stylesheet" href="../assets/css/css/home/Paralax-Hero-Banner.css">
+    <link rel="stylesheet" href="../assets/css/css/home/Paralax-Hero-Banner-Hero-Technology.css">
+    <link rel="stylesheet" href="../assets/css/css/home/Pretty-Footer-.css">
+    <link rel="stylesheet" href="../assets/css/css/login/Login-Box-En-login-box-en.css">
+    <link rel="stylesheet" href="../assets/css/css/signup/Sign-Up-Form---Gabriela-Carvalho.css">
+    <link rel="stylesheet" href="../assets/css/css/whatwedo/Latest-Blog.css">
+    <link rel="stylesheet" href="../assets/css/css/whatwedo/Navbar-Right-Links-icons.css">
+    <link rel="stylesheet" href="../assets/css/css/whatwedo/Paralax-Hero-Banner.css">
+    <link rel="stylesheet" href="../assets/css/css/whatwedo/Paralax-Hero-Banner-Hero-Technology.css">
+    <link rel="stylesheet" href="../assets/css/css/whatwedo/Pretty-Footer-.css">
+    <link rel="stylesheet" href="../assets/css/css/whatwedo/What-We-Do.css">
+</head>
+
+<body style="margin-top: 10%;">
+    <div class="d-flex flex-column justify-content-center" id="login-box">
+        <div class="login-box-header"><img src="../assets/img/logo-no-background.png" style="width: 300px;">
+            <h4 style="color: rgb(16,39,74);margin-bottom: 0px;font-weight: bold;font-size: 27px;padding: 15px;font-family: Roboto, sans-serif;">Log in</h4>
+            <div class="btn-group" role="group" aria-label="Basic radio toggle button group"><input type="radio" id="btnradio1" class="btn-check" name="btnradio" autocomplete="off" checked="" href="AdminDashboard.html"><label class="form-label btn btn-outline-primary" for="btnradio1" onclick="window.location.href = &#39;./adminDashboard.html&#39;">Admin</label><input type="radio" id="btnradio2" class="btn-check" name="btnradio" autocomplete="off"><label class="form-label btn btn-outline-primary" for="btnradio2" onclick="window.location.href =  &#39;./customerDashboard.html&#39;">Customer</label></div>
+        </div>
+        <div class="email-login" style="background-color:#ffffff;"><input type="email" class="email-imput form-control" style="margin-top:10px;" required="" placeholder="Email" minlength="6"><input type="password" id="passwrdBox" class="password-input form-control" style="margin-top:10px;" required="" placeholder="Password" minlength="6">
+            <div class="d-flex justify-content-between">
+                <div class="form-check form-check-inline" id="form-check-rememberMe"><input class="form-check-input form-check-input" type="checkbox" id="formCheck-1" data-bs-toggle="password" onclick="pswdFunction()" name="check" style="cursor:pointer;" for="password-input form-control"><script>
+  var checkbox = document.getElementById('formCheck-1');
+  var passwordInput = document.getElementById('password-input');
+
+  checkbox.addEventListener('change', function() {
+    if (this.checked) {
+      passwordInput.type = 'text';
+    } else {
+      passwordInput.type = 'password';
+    }
+  });
+</script><script>
+     const checkbox = document.getElementById('formCheck-1');
+     const passwordInput = document.getElementById('passwordInput');
+     
+     checkbox.addEventListener('click', function() {
+         if (checkbox.checked) {
+             passwordInput.type = 'text';
+         } else {
+             passwordInput.type = 'password';
+         }
+     });
+</script><label class="form-check-label" for="formCheck-1"><span class="label-text">Show Password</span></label></div><a id="forgot-password-link" href="#">Forgot Password?</a>
+            </div>
+        </div>
+        <div class="submit-row" style="margin-bottom:8px;padding-top:0px;"><button class="btn btn-primary d-block box-shadow w-100" id="submit-id-submit" type="submit" style="background: rgb(16,39,74);">Login</button></div>
+        <div class="d-flex flex-row align-items-center login-box-seperator-container">
+            <div class="login-box-seperator"></div>
+            <div class="login-box-seperator-text">
+                <p style="margin-bottom:0px;padding-left:10px;padding-right:10px;font-weight:400;color:rgb(201,201,201);">or</p>
+            </div>
+            <div class="login-box-seperator"></div>
+        </div>
+        <div id="login-box-footer" style="padding: 10px 20px;padding-bottom: 23px;padding-top: 18px;border-width: 0px;">
+            <p style="margin-bottom:0px;">Don't you have an account?<a id="register-link" href="../register.html">Sign Up!</a></p>
+        </div>
+    </div>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/bs-init.js"></script>
+    <script src="../assets/js/pswrd.js"></script>
+    <script src="../assets/js/regPswrd.js"></script>
+</body>
+
+</html>
