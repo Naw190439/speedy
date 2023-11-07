@@ -40,24 +40,22 @@
         <div class="row d-flex d-xl-flex justify-content-center justify-content-xl-center">
             <div class="col-sm-12 col-lg-10 col-xl-9 col-xxl-7 bg-white shadow-lg" style="border-radius: 5px;">
                 <div class="p-5">
-                    <div class="text-center"><img src="assets/img/logo-no-background.png" style="width: 300px;margin-bottom: 14px;margin-top: 23px;">
-                        <h5 class="text-dark mb-4">Create an Account!</h5>
-                    </div>
-                    <form class="user" style="border-style: none;">
+                    <div class="text-center"><img src="assets/img/logo-no-background.png" style="width: 300px;margin-bottom: 14px;margin-top: 23px;"></div>
+                    <div class="user">
                         <div class="row mb-3">
-                            <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" placeholder="First Name" required=""></div>
-                            <div class="col-sm-6"><input class="form-control form-control-user" type="text" placeholder="Last Name" required=""></div>
+                            <div class="col-sm-6 mb-3 mb-sm-0"><input type="text" id="firstname" class="form-control-user" placeholder="First Name" required="" style="width: 318px;height: 51.1875px;border-radius: 160px;"></div>
+                            <div class="col-sm-6"><input type="text" id="lastname" class="form-control-user" placeholder="Last Name" required="" style="height: 51.1875px;border-radius: 160px;"></div>
                         </div>
-                        <div class="mb-3"><input class="form-control form-control-user" type="email" id="email" placeholder="Email Address" required=""></div>
-                        <div class="mb-3"><input class="form-control form-control-user" type="text" placeholder="Username" required=""></div>
+                        <div class="mb-3"><input type="email" id="email" class="form-control-user" placeholder="Email Address" required="" style="width: 660px;height: 51.1875px;border-radius: 160px;border-width: 0px;border-color: var(--bs-secondary-color);background: rgb(241,241,241);padding: 16px;"></div>
+                        <div class="mb-3"><input type="text" id="username" class="form-control-user" placeholder="Username" required="" style="height: 51.1875px;border-radius: 160px;"></div>
                         <div class="row mb-3">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <div class="form-group"><input class="form-control form-control form-control-user" type="password" id="password" placeholder="Password" required="" tagname="pswdBox" onclick="pswdFunction()"></div>
+                                <div class="form-group"><input type="password" id="password" class="form-control form-control-user" placeholder="Password" required="" tagname="pswdBox" onclick="pswdFunction()" style="height: 51.1875px;border-radius: 160px;"></div>
                                 <div class="form-group">
                                     <div class="form-check"><input type="checkbox" id="showPassword" class="form-check-input" onclick="rgpswdFunction()"><label class="form-label form-check-label" for="showPassword"> Show Password </label></div>
                                 </div>
                             </div>
-                            <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="verifyPassword" placeholder="Repeat Password" required="" onclick="pswdFunction()">
+                            <div class="col-sm-6"><input type="password" id="verifyPassword" class="form-control-user" placeholder="Repeat Password" required="" onclick="pswdFunction()" style="height: 51.1875px;border-radius: 160px;">
                                 <div class="form-group">
                                     <div class="form-check"><input type="checkbox" id="showPassword" class="form-check-input" onclick="rgpswd2Function()"><label class="form-label form-check-label" for="showPassword"> Show Password </label></div>
                                 </div>
@@ -66,11 +64,11 @@
                         <div class="row mb-3">
                             <p id="emailErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
                             <p id="passwordErrorMsg" class="text-danger" style="display:none;">Paragraph</p>
-                        </div><button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit" style="background: rgb(12,27,48);">Get started!</button>
+                        </div>
+                        <button class="btn btn-primary d-block btn-user w-100" id="signUpBtn" type="submit" style="background: rgb(12,27,48);border-radius: 100.6px;">Get started</button>
                         <hr>
-                    </form>
-                    <div class="text-center"><a class="small" href="forgot-password.html">Forgot Password?</a></div>
-                    <div class="text-center"><a class="small" href="login.html">Already have an account? Login!</a></div>
+                        <div class="text-center"><a class="small" href="./customerLogin.html">Already have an account? Login!</a></div>
+                    </div>
                 </div>
             </div>
         </div><script>
@@ -112,21 +110,11 @@
 	
 	// Validate password upon change
 	password.addEventListener("change", function() {
-
-		// If password has no value, then it won't be changed and no error will be displayed
-		if(password.value.length == 0 && verifyPassword.value.length == 0) hideErrorMsg("password")
-		
-		// If password has a value, then it will be checked. In this case the passwords don't match
-		else if(password.value !== verifyPassword.value) displayErrorMsg("password", "Passwords do not match")
-		
-		// When the passwords match, we check the length
-		else {
 			// Check if the password has 8 characters or more
 			if(password.value.length >= 8)
 				hideErrorMsg("password")
 			else
 				displayErrorMsg("password", "Password must be at least 8 characters long")
-		}
 	})
 	
 	verifyPassword.addEventListener("change", function() {
@@ -156,5 +144,76 @@
     <script src="assets/js/pswrd.js"></script>
     <script src="assets/js/regPswrd.js"></script>
 </body>
+
+
+<!-- Databas -->
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+	import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+    // Your web app's Firebase configuration
+
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+        apiKey: "AIzaSyCG_zZxotVjURGpeHr5pTh9wkKFFBfQo-M",
+        authDomain: "usersdb-4d54c.firebaseapp.com",
+        databaseURL: "https://usersdb-4d54c-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "usersdb-4d54c",
+        storageBucket: "usersdb-4d54c.appspot.com",
+        messagingSenderId: "602482286493",
+        appId: "1:602482286493:web:c7923354f718f92f3c1974",
+        measurementId: "G-BXF87M4VNZ"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+	const database = getDatabase(app);
+    const auth = getAuth(app);
+
+
+	signUpBtn.addEventListener('click',(e) => {
+		
+		var firstname = document.getElementById('firstname').value;
+		var lastname = document.getElementById('lastname').value;
+        var email = document.getElementById('email').value;
+        var username = document.getElementById('username').value;
+		var password = document.getElementById('password').value;
+		
+		
+
+
+
+		createUserWithEmailAndPassword(auth, email, password)
+		.then((userCredential) => {
+			// Signed up 
+			const user = userCredential.user;
+			set(ref(database, 'user/shops/' + user.uid),{
+				username: username,
+				email: email,
+				first_name: firstname,
+				last_name: lastname,
+				password: password,
+                subscription: "Standard",
+			})
+			alert('User Created Successfuly');
+			setTimeout(function() {
+				location.href = './customerLogin.html';
+			}, 3000);
+			
+			// ...
+		})
+		.catch((error) => {
+			const errorCode = error.code;
+			const errorMessage = error.message;
+			// ..
+		});
+	});
+</script>
+
+<!-- Databas -->
 
 </html>
