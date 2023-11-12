@@ -120,7 +120,7 @@
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">John Doe</span><img class="border rounded-circle img-profile" src="../assets/img/avatars/dash.jpg?h=7b2597ecffd3e09bd6355fe9529a2e31"></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span id="name" class="d-none d-lg-inline me-2 text-gray-600 small"></span><img class="border rounded-circle img-profile" src="../assets/img/avatars/dash.jpg?h=7b2597ecffd3e09bd6355fe9529a2e31"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
                                         <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
@@ -279,5 +279,62 @@
     <script src="../assets/js/Bootstrap-4---Payment-Form-script.js?h=207608d6252ba6c04cfd97da377d730a"></script>
     <script src="../assets/js/theme.js?h=79f403485707cf2617c5bc5a2d386bb0"></script>
 </body>
+
+
+
+<script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    import { getDatabase, set, ref} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+    
+    
+
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyCG_zZxotVjURGpeHr5pTh9wkKFFBfQo-M",
+            authDomain: "usersdb-4d54c.firebaseapp.com",
+            databaseURL: "https://usersdb-4d54c-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "usersdb-4d54c",
+            storageBucket: "usersdb-4d54c.appspot.com",
+            messagingSenderId: "602482286493",
+            appId: "1:602482286493:web:c7923354f718f92f3c1974",
+            measurementId: "G-BXF87M4VNZ"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const database = getDatabase(app);
+        // Get the current user.
+        const user = auth.currentUser;
+
+
+        window.addEventListener('load', () => {
+            auth.onAuthStateChanged((user) => {
+                console.log('User state changed!');
+
+                if (user) {
+                // The user is logged in.
+                // Get the user's data from Firebase.
+
+                const uid = user.uid;
+
+                const userRef = database.ref(`user/${uid}`);
+
+                userRef.get().then((snapshot) => {
+                    const userData = snapshot.val();
+                    document.getElementById('name').textContent = userData.name;
+                });
+                } else {
+                // The user is not logged in.
+                }
+            });
+        });
+    </script>
+    
+
+
+
 
 </html>
