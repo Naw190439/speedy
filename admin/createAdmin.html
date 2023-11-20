@@ -41,7 +41,7 @@
         <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark" style="background: rgb(36,41,57);">
             <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-icon rotate-n-15"></div>
-                    <div class="sidebar-brand-text mx-3"><img src="../assets/img/logo-no-background.png" style="width: 200px;margin-left: -21px;"></div>
+                    <div class="sidebar-brand-text mx-3"><img src="../assets/img/Fulfillment.png" style="width: 200px;margin-left: -21px;"></div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
@@ -156,7 +156,7 @@
                             <div class="row">
                                 <div class="col-md-6 text-nowrap" style="width: 100%;">
                                     <div class="p-5">
-                                        <div class="user">
+                                        <form class="user" style="border-width: 0px;">
                                             <div class="row mb-3">
                                                 <div class="col-sm-6 mb-3 mb-sm-0"><input type="text" id="firstname" class="form-control-user" placeholder="First Name" required="" style="height: 51.1875px;border-radius: 160px;"></div>
                                                 <div class="col-sm-6"><input type="text" id="lastname" class="form-control-user" placeholder="Last Name" required="" style="height: 51.1875px;border-radius: 160px;"></div>
@@ -181,7 +181,7 @@
                                                 <p id="passwordErrorMsg-1" class="text-danger" style="display:none;">Paragraph</p>
                                             </div><button class="btn btn-primary d-block btn-user w-100" id="submitBtn" type="submit" style="background: rgb(12,27,48);border-radius: 100px;">Register</button>
                                             <hr>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -276,6 +276,7 @@
     <script src="../assets/js/bs-init.js"></script>
     <script src="../assets/js/pswrd.js"></script>
     <script src="../assets/js/regPswrd.js"></script>
+    <script src="../webpackJS/admnReg.js"></script>
 </body>
 
 
@@ -283,7 +284,7 @@
 
 <!-- Databas -->
 
-<script type="module">
+<!-- <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
     import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
@@ -340,7 +341,7 @@
 		});
 	});
   </script>
-
+ -->
 <!-- Databas -->
 
 </html>
