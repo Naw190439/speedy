@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Blank Page - Brand</title>
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css?h=97380e22c8933e9aa79cbc2390b9f15a">
-    <link rel="stylesheet" href="../assets/css/Nunito.css?h=bb154663f283bc192f689c9d8281da5f">
-    <link rel="stylesheet" href="../assets/css/Roboto%20Serif.css?h=3e53ae9f3c79560bbb7e614202ec5e06">
+    <link rel="stylesheet" href="../assets/css/Nunito.css?h=53ba7ca22fa9d0575ab8a88fa909aa33">
+    <link rel="stylesheet" href="../assets/css/Roboto%20Serif.css?h=da09ad6aafde39088b54f1e630868919">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="../assets/css/Application-Form.css?h=598e58ed95f39eef38556e1d3bc905f4">
     <link rel="stylesheet" href="../assets/css/Bootstrap-4---Payment-Form.css?h=6741d16be0bf9aab98e88d591039887f">
@@ -21,11 +21,11 @@
         <nav class="navbar align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0 navbar-dark" style="background: rgb(36,41,57);">
             <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
                     <div class="sidebar-brand-icon rotate-n-15"></div>
-                    <div class="sidebar-brand-text mx-3"><img src="../assets/img/logo-no-background.png?h=a410c85a015b337b22770a666feae0c7" style="width: 200px;margin-left: -21px;"></div>
+                    <div class="sidebar-brand-text mx-3"><img src="../assets/img/Fulfillment.png?h=86b0cb438a0491e26d8e8e64f23f9ea9" style="width: 200px;margin-left: -21px;"></div>
                 </a>
                 <hr class="sidebar-divider my-0">
                 <ul class="navbar-nav text-light" id="accordionSidebar">
-                    <li class="nav-item"><a class="nav-link" href="customerDashboard.html"><span>Dashboard</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="AdminDashboard.html"><span>Dashboard</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.html"><span>Profile</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="table.html"><span>Table</span></a></li>
                     <li class="nav-item"></li>
@@ -122,7 +122,7 @@
                             <li class="nav-item dropdown no-arrow">
                                 <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#"><span class="d-none d-lg-inline me-2 text-gray-600 small">John Doe</span><img class="border rounded-circle img-profile" src="../assets/img/avatars/dash.jpg?h=7b2597ecffd3e09bd6355fe9529a2e31"></a>
                                     <div class="dropdown-menu shadow dropdown-menu-end animated--grow-in"><a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Settings</a><a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Activity log</a>
-                                        <div class="dropdown-divider"></div><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
+                                        <div class="dropdown-divider"></div><a class="dropdown-item logOut" href="#"><i class="fas fa-sign-out-alt fa-sm fa-fw me-2 text-gray-400"></i>&nbsp;Logout</a>
                                     </div>
                                 </div>
                             </li>
@@ -130,8 +130,34 @@
                     </div>
                 </nav>
                 <div class="container-fluid">
-                    <h3 class="text-dark mb-1">My Subscription</h3>
+                    <h3 class="text-dark mb-1"></h3>
                 </div><!-- Start: Pricing Centered -->
+                <div class="container py-4 py-xl-5">
+                    <div class="row mb-5">
+                        <div class="col-md-8 col-xl-6 text-center mx-auto">
+                            <h2><span style="color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity));">My Subscription</span></h2>
+                        </div>
+                    </div>
+                    <div class="row gy-4 gy-xl-0 row-cols-1 row-cols-md-2 row-cols-xl-3 d-xl-flex align-items-xl-center gutter-y justify-content-center">
+                        <div class="col">
+                            <div class="card border-primary border-2 justify-content-center">
+                                <div class="card-body text-center p-4 justify-content-center"><span class="badge rounded-pill bg-primary position-absolute top-0 start-50 translate-middle text-uppercase">Most Popular</span>
+                                    <h4 class="display-4 fw-bold card-title" style="font-size: 40px;">Congratulations</h4>
+                                </div>
+                                <div class="card-footer p-4">
+                                    <div style="text-align: center;">
+                                        <ul class="list-unstyled">
+                                            <li class="d-flex mb-2"><span class="bs-icon-xs bs-icon-rounded bs-icon-primary-light bs-icon me-2"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-lg">
+                                                        <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"></path>
+                                                    </svg></span><span style="color: var(--bs-emphasis-color);font-size: 18px;"><span style="color: rgb(55, 65, 81); background-color: rgb(247, 247, 248);">Your current subscription is :</span></span></li>
+                                        </ul>
+                                    </div><label class="form-label" style="text-align: center;padding-left: 100px;"><span style="color: rgb(55, 65, 81); background-color: rgb(247, 247, 248);">STANDARD</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- End: Pricing Centered -->
+                <!-- Start: Pricing Centered -->
                 <div class="container py-4 py-xl-5">
                     <div class="row mb-5">
                         <div class="col-md-8 col-xl-6 text-center mx-auto">
@@ -143,7 +169,7 @@
                             <div class="card">
                                 <div class="card-body text-center p-4">
                                     <h6 class="text-uppercase text-muted card-subtitle">standard</h6>
-                                    <h4 class="display-4 fw-bold card-title">10OMR</h4>
+                                    <h4 class="display-4 fw-bold card-title">10 OMR</h4>
                                 </div>
                                 <div class="card-footer p-4">
                                     <div>
@@ -166,7 +192,7 @@
                             <div class="card border-primary border-2">
                                 <div class="card-body text-center p-4"><span class="badge rounded-pill bg-primary position-absolute top-0 start-50 translate-middle text-uppercase">Most Popular</span>
                                     <h6 class="text-uppercase text-muted card-subtitle">Pro</h6>
-                                    <h4 class="display-4 fw-bold card-title">15OMR</h4>
+                                    <h4 class="display-4 fw-bold card-title">15 OMR</h4>
                                 </div>
                                 <div class="card-footer p-4">
                                     <div>
@@ -189,7 +215,7 @@
                             <div class="card">
                                 <div class="card-body text-center p-4">
                                     <h6 class="text-uppercase text-muted card-subtitle">Enterprise</h6>
-                                    <h4 class="display-4 fw-bold card-title">25OMR</h4>
+                                    <h4 class="display-4 fw-bold card-title">25 OMR</h4>
                                 </div>
                                 <div class="card-footer p-4">
                                     <div>
@@ -224,6 +250,7 @@
     <script src="../assets/js/Application-Form-submit-form.js?h=a4849fe3979293aae4bf12c3939c3af2"></script>
     <script src="../assets/js/Bootstrap-4---Payment-Form-script.js?h=207608d6252ba6c04cfd97da377d730a"></script>
     <script src="../assets/js/theme.js?h=79f403485707cf2617c5bc5a2d386bb0"></script>
+    <script src="../../webpackJS/custmr.js"></script>
 </body>
 
 </html>
