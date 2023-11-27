@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 /* const path = require('path')
 
 module.exports = {
@@ -38,6 +39,8 @@ module.exports = {
   watch: true
 }
 =======
+=======
+>>>>>>> Stashed changes
 const path = require('path');
 
 const config = [
@@ -89,4 +92,7 @@ const config = [
 ];
 
 module.exports = config;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

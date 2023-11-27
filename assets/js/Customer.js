@@ -26,6 +26,7 @@
     const fsDB = getFirestore(app);
     const currentUser = auth.currentUser;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     const currentUserID = currentUser.uid;
     const userDocRef = doc(fsDB, "Customers", currentUserID);
     
@@ -49,6 +50,8 @@
 
 
 =======
+=======
+>>>>>>> Stashed changes
     
     onAuthStateChanged(auth, async (user) => {
         if (user) {
@@ -74,6 +77,9 @@
     
     
     // Sign Out 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
     const signOutCustomer = document.querySelector('.logOut');
     signOutCustomer.addEventListener('click', () => {
