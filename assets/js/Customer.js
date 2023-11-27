@@ -25,6 +25,7 @@
     const auth = getAuth(app);
     const fsDB = getFirestore(app);
     const currentUser = auth.currentUser;
+<<<<<<< Updated upstream
     const currentUserID = currentUser.uid;
     const userDocRef = doc(fsDB, "Customers", currentUserID);
     
@@ -47,6 +48,33 @@
     });
 
 
+=======
+    
+    onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const UID = user.uid;
+      
+          // Retrieve user data from Firestore
+          const colRef = collection(fsDB, 'Customers');
+          const userDocSnap = await getDoc(colRef);
+          const userData = userDocSnap.data();
+      
+          if (userData) {
+            const userName = userData.name;
+            console.log("Current user name:", userName);
+          } else {
+            console.log("No user data found for UID:", UID);
+          }
+        } else {
+          console.log("No current user signed in");
+        }
+      });
+
+    
+    
+    
+    // Sign Out 
+>>>>>>> Stashed changes
     const signOutCustomer = document.querySelector('.logOut');
     signOutCustomer.addEventListener('click', () => {
         
